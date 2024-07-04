@@ -3,30 +3,28 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link  rel="icon" href="../public/icons/logo1.png" type="image/x-icon" />
+   <link  rel="icon" href="./icons/logo1.png" type="image/x-icon" />
 
    <!-- styles -->
-   <link rel="stylesheet" href="../public/css/dashboard.css">
-
+   <link rel="stylesheet" href="/css/dashboard.css">
 
    <title>TrackRecord</title>
 
    <!-- CHARTS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
-
 </head>
 <body>
    <main>
       <header>
-         <h1>Good <span id="day-indicator">Morning</span>, <span id="name">Tristan</span></h1>
+         <h1>Good <span id="day-indicator">Morning</span>, <span id="name"><%= name %></span></h1>
          <p>Welcome to your Financial Insights.</p>
       </header>
       <section class="head-section">
          <div class="totalbalance">
             <div class="top1">
-               <img class="left" src="../public/icons/total-bal.svg" height="30" weight="30" alt="balance-icon" >
-               <p class="right"><span><img src="../public/icons/arrow.svg" height="15" weight="15" alt="arrow"></span id="added-percent-balance">+5%</p>
+               <img class="left" src="./icons/total-bal.svg" height="30" weight="30" alt="balance-icon" >
+               <p class="right"><span><img src="../icons/arrow.svg" height="15" weight="15" alt="arrow"></span id="added-percent-balance">+5%</p>
             </div>
             <div class="bot1">
                <div class="left">
@@ -41,8 +39,8 @@
          </div>
          <div class="totalincome">
             <div class="top1">
-              <img class="left" src="../public/icons/total-income.svg" height="30" weight="30" alt="income-icon" >
-               <p class="right"><span><img src="../public/icons/arrow.svg" height="15" weight="15" alt="arrow"></span id="added-percent-balance">+5%</p>
+              <img class="left" src="../icons/total-income.svg" height="30" weight="30" alt="income-icon" >
+               <p class="right"><span><img src="../icons/arrow.svg" height="15" weight="15" alt="arrow"></span id="added-percent-balance">+5%</p>
             </div>
             <div class="bot1">
                <div class="left">
@@ -69,38 +67,38 @@
       <div class="top">
          <li class="nav-items">
             <div class="logo">
-               <img src="../public/icons/logo2.png" alt="TrackRecord" >
+               <img src="../icons/logo2.png" alt="TrackRecord" >
             </div>
          </li>
       </div>
       <div class="main-nav">
          <li class="nav-items">
             <div class="nav-icon">
-               <img src="../public/icons/home.svg" alt="ic-home"/>
+               <img src="../icons/home.svg" alt="ic-home"/>
             </div>
             <div class="nav-text">Dashboard</div>
          </li>
          <li class="nav-items">
             <div class="nav-icon">
-               <img src="../public/icons/transaction.svg" alt="icon-transaction"/>
+               <img src="../icons/transaction.svg" alt="icon-transaction"/>
             </div>
             <div class="nav-text">Transactions</div>
          </li>
          <li class="nav-items">
             <div class="nav-icon">
-               <img src="../public/icons/budget.svg" alt="icon-budget"/>
+               <img src="../icons/budget.svg" alt="icon-budget"/>
             </div>
             <div class="nav-text">Budget</div>
          </li>
          <li class="nav-items">
             <div class="nav-icon">
-               <img src="../public/icons/analytics.svg" alt="icon-analytics"/>
+               <img src="../icons/analytics.svg" alt="icon-analytics"/>
             </div>
             <div class="nav-text">Analytics</div>
          </li>
          <li class="nav-items">
             <div class="nav-icon">
-               <img src="../public/icons/notif.svg" alt="icon-notification"/>
+               <img src="../icons/notif.svg" alt="icon-notification"/>
             </div>
             <div class="nav-text">Notifications</div>
          </li>
@@ -111,13 +109,13 @@
       <div class="mid">
          <li class="nav-items down">
             <div class="nav-icon">
-               <img  src="../public/icons/help.svg" alt="help-icon">
+               <img  src="../icons/help.svg" alt="help-icon">
             </div>
             <div class="nav-text">Help</div>
          </li>
          <li class="nav-items down">
             <div class="nav-icon">
-               <img  src="../public/icons/settings1.svg" alt="settings-icon">
+               <img  src="../icons/settings1.svg" alt="settings-icon">
             </div>
             <div class="nav-text">Settings</div>
          </li>
@@ -128,13 +126,14 @@
       <div class="bot">
          <li class="nav-items down">
             <div class="nav-icon">
-               <img  src="../public/icons/login.svg" alt="login-icon">
+               <img  src="../icons/login.svg" alt="login-icon">
             </div>
-            <a href="../Login.html"><button class="nav-text" >Sign In</button></a>
+            <a href="/"><button class="nav-text" >Sign In</button></a>
+            <a href="/logout"><button class="nav-text" >Logout</button></a>
          </li>
       </div>
    </nav>
 
-      <script src="../public/js/dashboard.js"></script>
+      <script src="/js/dashboard.js"></script>
 </body>
 </html>

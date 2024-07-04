@@ -8,9 +8,16 @@
 <body>
    <h1>login</h1>
    <form action="submit" method="post">
+      <label for="username">username</label>
       <input id="username" type="text">
+      <label for="password">password</label>
       <input id="password" type="password">
-      <button >Login</button>
+      <button id="login-btn">Login</button>
+
+      <div class="sign-in_with_google">
+         <button type="button" class="googleSignIn">Sign-in with google</button>
+         <a href="/auth/google">Login with Google</a>
+      </div>
    </form>
 </body>
 </html>
