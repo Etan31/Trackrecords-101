@@ -1,78 +1,90 @@
-const express = require("express");
-const http = require("http");
-const app = express();
-const session = require("express-session");
-const passport = require("passport");
-const server = http.createServer(app);
-const path = require('path');
-const pg = require('pg');
-const fs = require('fs');
-const { pool } = require('./dbConfig');
+require('dotenv').config(); 
 
-// Set views directory and view engine
+const express = require('express');
+const http = require('http');
+const app = express();
+const session = require('express-session');
+const passport = require('passport');
+const path = require('path');
+
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({ extended: true }));
 
-// api
-require('./auth');
-
-
-// your current directory is views
-
-app.get('/', (req,res) => {
-   res.render('../Login');
-})
-
-app.get('/dashboard', (req,res) => {
-   let name = 'Tristan';
-   res.render('./dashboard.ejs', {name: name});
-})
-
-function isLoggedIn (req, res, next) {
-  req.user ? next () : res.sendStatus (401);
-}
-
-app.use (
-  session ({
+app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
-    cookie: {secure: false},
-  })
-);
+    cookie: { secure: false },
+}));
 
-app.use (passport.initialize ());
-app.use (passport.session ());
-app.get (
-  '/auth/google',
-  passport.authenticate ('google', {
-    scope: ['email', 'profile'],
-  })
-);
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.get (
-  '/auth/google/callback',
-  passport.authenticate ('google', {
-    successRedirect: '/auth/protected',
-    failureRedirect: '/auth/google/failure',
-  })
-);
+require('./auth');
 
-app.get ('/auth/google/failure', (req, res) => {
-  res.send ('Something went wrong!');
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+    req.user = req.session.passport.user; // or however you store the user data
+    next();
+  } else {
+    res.sendStatus(401);
+  }
+}
+
+
+app.get('/', (req, res) => {
+    res.render('../login', { loggedIn: false });
 });
 
-app.get ('/auth/protected', isLoggedIn, (req, res) => {
-  let name = req.user.displayName;
-  res.render('./dashboard.ejs', {name: name});
+app.get('/dashboard', isLoggedIn, (req, res) => {
+    let name = 'Tristan';
+        console.log("user:" +  req.user );
+    res.render('dashboard', { name: name, loggedIn: true});
 });
 
-app.get('/logout', (req,res) => {
-  req.session.destroy();
-  res.render('../login');
+app.get('/accounts', isLoggedIn, (req, res) => {
+    let userData =  req.user;
+    console.log("user:" +  req.user );
+
+    const profile = {
+        displayName: userData.displayName,
+        email: userData.emails[0].value,
+        profilePicture: userData.photos[0].value,
+    }
+    res.render('accounts.ejs' , {profile, loggedIn: true})
+})
+
+// Google OAuth routes
+app.get('/auth/google',
+    passport.authenticate('google', {
+        scope: ['email', 'profile'],
+    })
+);
+
+app.get('/auth/google/callback',
+    passport.authenticate('google', {
+        successRedirect: '/auth/protected',
+        failureRedirect: '/auth/google/failure',
+    })
+);
+
+app.get('/auth/google/failure', (req, res) => {
+    res.send('Something went wrong!');
 });
 
-const PORT = 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.get('/auth/protected', isLoggedIn, (req, res) => {
+    let name = req.user.displayName;
+    res.render('dashboard', { name: name });
+});
+
+app.get('/logout', (req, res) => {
+    req.session.destroy();
+    res.render('../login',{ loggedIn: false });
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
