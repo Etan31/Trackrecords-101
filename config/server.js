@@ -2,26 +2,33 @@ require('dotenv').config();
 
 const express = require('express');
 const http = require('http');
-const app = express();
+const app = express();  
 const session = require('express-session');
 const passport = require('passport');
+const cookieParser = require('cookie-parser');
 const path = require('path');
 const { pool } = require("./dbConfig");
+const autoLogin = require('../src/middlewares/autoLogin');
+const initializePassport = require("./passportConfig");
+initializePassport(passport);
 
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({ extended: true }));
-
+app.use(cookieParser());
 app.use(session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false },
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    secure: false, // set to true if you're using HTTPS
+    maxAge: 5184000 // 90 days
+  }
 }));
-
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(autoLogin);
 
 require('./auth');
 
@@ -74,10 +81,10 @@ app.get('/auth/google/callback',
 app.get('/auth/google/failure', (req, res) => {
     res.send('Something went wrong!');
 });
-
 app.get('/auth/protected', isLoggedIn, async (req, res) => {
+    console.log("User info: ", req.user);
     let id = req.user.id;
-    let email = req.user.emails[0].value;
+    let email = req.user.email;
     let fullname = req.user.displayName;
     let name = req.user.name.givenName;
     let profilePic = req.user.photos[0].value;
@@ -85,34 +92,44 @@ app.get('/auth/protected', isLoggedIn, async (req, res) => {
 
     try {
         const existsQuery =  `SELECT 1 FROM users WHERE id = $1`;
-        // const checkresult  = await pool.query( checkquery, [id])
         const existsResult = await pool.query(existsQuery, [id]);
 
         // This will check if the user is already existed on the database
-        if(existsResult && existsResult.row && existsResult.row.length > 0) {
+        if(existsResult || existsResult.row || existsResult.row.length > 0) {
             console.log(`The user: ${id} already existed`);
             res.render('dashboard', {name: name, isLoggedIn: true});
             return;
+        } else {
+            res.cookie('auth_token', req.user.id, {
+                httpOnly:true,
+                secure:false,
+                maxAge: 5184000
+            })
+            
+            //for inserting profile info to database
+            const query = `INSERT INTO users (id, email, fullname, display_name, profile_picture, user_type)
+            VALUES ($1, $2, $3, $4, $5, $6)`
+            const values = [ id, email, fullname, name, profilePic, user_type];
+
+            const result = await pool.query(query, values);
+            res.render('dashboard', { name: name , isLoggedIn: true});
         }
-
-
-        //for inserting profile info to database
-        const query = `INSERT INTO users (id, email, fullname, display_name, profile_picture, user_type)
-        VALUES ($1, $2, $3, $4, $5, $6)`
-        const values = [ id, email, fullname, name, profilePic, user_type];
-
-        const result = await pool.query(query, values);
     } catch (error) {
         console.error('Error inserting user:', error);
         res.status(500).json('Internal server error');
     }
-
-    res.render('dashboard', { name: name , isLoggedIn: true});
 });
 
 app.get('/logout', (req, res) => {
-    req.session.destroy(); // to remove the session cookie
-    res.render('../login',{ loggedIn: false });
+  req.logout((err) => {
+    if (err) {
+      return next(err);
+    }
+    req.session.destroy(() => {
+      res.clearCookie('connect.sid');
+      res.redirect('/');
+    });
+  });
 });
 
 const PORT = process.env.PORT || 3000;
