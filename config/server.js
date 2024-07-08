@@ -43,13 +43,17 @@ function isLoggedIn(req, res, next) {
 
 
 app.get('/', (req, res) => {
+  if (req.isAuthenticated()) {
+    res.redirect('/dashboard');
+  } else {
     res.render('../login', { loggedIn: false });
+  }
 });
 
 app.get('/dashboard', isLoggedIn, (req, res) => {
     let name = 'Tristan';
     
-    res.render('dashboard', { name: name,  isLoggedIn: false});
+    res.render('dashboard', {name: name, isLoggedIn: true});
 });
 
 app.get('/accounts', isLoggedIn, (req, res) => {
