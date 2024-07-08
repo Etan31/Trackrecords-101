@@ -32,6 +32,9 @@ const config = {
   type: 'line',
   data,
   options: {
+   responsive: true,
+   maintainAspectRatio: true,
+   
       plugins: {
          customCanvasBackgroundColor: {
             color: 'rgba(225, 255, 255, 0.25)',

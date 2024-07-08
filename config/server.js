@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
 
 app.get('/dashboard', isLoggedIn, (req, res) => {
     let name = 'Tristan';
-    console.log("user:" +  req.user );
+    
     res.render('dashboard', { name: name,  isLoggedIn: false});
 });
 
@@ -84,6 +84,18 @@ app.get('/auth/protected', isLoggedIn, async (req, res) => {
     const user_type = 'user'
 
     try {
+        const existsQuery =  `SELECT 1 FROM users WHERE id = $1`;
+        // const checkresult  = await pool.query( checkquery, [id])
+        const existsResult = await pool.query(existsQuery, [id]);
+
+        // This will check if the user is already existed on the database
+        if(existsResult && existsResult.row && existsResult.row.length > 0) {
+            console.log(`The user: ${id} already existed`);
+            res.render('dashboard', {name: name, isLoggedIn: true});
+            return;
+        }
+
+
         //for inserting profile info to database
         const query = `INSERT INTO users (id, email, fullname, display_name, profile_picture, user_type)
         VALUES ($1, $2, $3, $4, $5, $6)`
@@ -94,12 +106,12 @@ app.get('/auth/protected', isLoggedIn, async (req, res) => {
         console.error('Error inserting user:', error);
         res.status(500).json('Internal server error');
     }
-    
+
     res.render('dashboard', { name: name , isLoggedIn: true});
 });
 
 app.get('/logout', (req, res) => {
-    req.session.destroy();
+    req.session.destroy(); // to remove the session cookie
     res.render('../login',{ loggedIn: false });
 });
 
