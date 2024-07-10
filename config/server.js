@@ -54,6 +54,7 @@ function isLoggedIn(req, res, next) {
 }
 
 //to automate logging in if the user is authenticated(has logged in already)
+//TODO: reread this
 app.use(async (req, res, next) => {
   if (req.session && req.session.passport && req.session.passport.user) {
     // User is already logged in, authenticate them
