@@ -10,6 +10,9 @@ const path = require('path');
 const { pool } = require("./dbConfig");
 const autoLogin = require('../src/middlewares/autoLogin');
 const initializePassport = require("./passportConfig");
+
+// const memoryStore = new session.MemoryStore();
+
 initializePassport(passport);
 
 app.set('views', path.join(__dirname, '../views'));
@@ -17,15 +20,25 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+const PgSession = require('connect-pg-simple')(session);
+const store = new PgSession({
+  pool: pool,
+  tableName: process.env.DB_SESSION // table name to store sessions
+});
+
 app.use(session({
   secret: 'secret',
   resave: false,
   saveUninitialized: true,
+  store: store,
   cookie: {
     secure: false, // set to true if you're using HTTPS
     maxAge: 5184000 // 90 days
   }
 }));
+
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(autoLogin);
@@ -41,6 +54,22 @@ function isLoggedIn(req, res, next) {
   }
 }
 
+//to automate logging in if the user is authenticated(has logged in already)
+app.use(async (req, res, next) => {
+  if (req.session && req.session.passport && req.session.passport.user) {
+    // User is already logged in, authenticate them
+    const user = req.session.passport.user;
+    req.logIn(user, (err) => {
+      if (err) {
+        return next(err);
+      }
+      next();
+    });
+  } else {
+    next();
+  }
+});
+
 
 app.get('/', (req, res) => {
   if (req.isAuthenticated()) {
@@ -49,6 +78,8 @@ app.get('/', (req, res) => {
     res.render('../login', { loggedIn: false });
   }
 });
+
+
 
 app.get('/dashboard', isLoggedIn, (req, res) => {
     let name = 'Tristan';
@@ -129,6 +160,11 @@ app.get('/logout', (req, res) => {
     if (err) {
       return next(err);
     }
+    store.destroy(req.sessionID, (err) => {
+      if(err) {
+        console.error(err);
+      }
+    });
     req.session.destroy(() => {
       res.clearCookie('connect.sid');
       res.redirect('/');

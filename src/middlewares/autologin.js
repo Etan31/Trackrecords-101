@@ -23,7 +23,4 @@ const autoLogin = (req, res, next) => {
   }
 };
 
-
-module.exports = autoLogin;
-
 module.exports = autoLogin;
