@@ -80,7 +80,8 @@ app.get('/', (req, res) => {
 });
 
 
-//TODO: this name should match the givenName of the logged in user.  
+//TODO: this name should match the givenName of the logged in user.
+//should watch the stored session to get the given name of the logged in user
 app.get('/dashboard', isLoggedIn, (req, res) => {
     let name = 'Tristan';
     
