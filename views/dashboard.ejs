@@ -131,8 +131,6 @@
             <!-- <a href="/"><button class="nav-text" >Sign In</button></a> -->
 
             <a href="<%= isLoggedIn ? '/accounts' : '/' %>"> 
-               <!-- TODO: change this to ejs -->
-                <!-- should be accounts or login -->
                <button class="nav-text" ><%= isLoggedIn ? 'Account' : 'Sign-In' %>
                </button>
                <a href="/logout"><button class="nav-text" >Logout</button>
