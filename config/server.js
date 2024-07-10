@@ -80,7 +80,7 @@ app.get('/', (req, res) => {
 });
 
 
-
+//TODO: this name should match the givenName of the logged in user.  
 app.get('/dashboard', isLoggedIn, (req, res) => {
     let name = 'Tristan';
     
