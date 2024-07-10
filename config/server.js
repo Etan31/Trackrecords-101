@@ -11,7 +11,6 @@ const { pool } = require("./dbConfig");
 const autoLogin = require('../src/middlewares/autoLogin');
 const initializePassport = require("./passportConfig");
 
-// const memoryStore = new session.MemoryStore();
 
 initializePassport(passport);
 
