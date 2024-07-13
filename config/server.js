@@ -84,7 +84,6 @@ app.get('/', (req, res) => {
 //should watch the stored session to get the given name of the logged in user
 app.get('/dashboard', isLoggedIn, (req, res) => {
     let name = 'Tristan';
-    
     res.render('dashboard', {name: name, isLoggedIn: true});
 });
 
