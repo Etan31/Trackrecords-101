@@ -3,25 +3,32 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./css/login.css">
    <title>TrackRecord</title>
 </head>
 <body>
-   <h1>login</h1>
-   <div class="featuresDiv">
-      
-   </div>
-   <div class="formDiv">
-      <form action="submit" method="post">
-         <label for="username">username</label>
-         <input id="username" type="text">
-         <label for="password">password</label>
-         <input id="password" type="password">
-         <!-- <button id="login-btn">Login</button> -->
-         <div class="sign-in_with_google">
-            <button type="button" class="googleSignIn">Sign-in with google</button>
-            <a href="/auth/google">Login with Google</a>
-         </div>
-      </form>
-   </div>
+   <main class="main-login">
+      <div class="featuresDiv">
+         <!-- Features of  some functionality will be shown here in image form-->
+      </div>
+      <div class="formDiv">
+         <form action="submit" class="login-form" method="post">
+            <legend>Sign In</legend>
+            <label for="username">username</label>
+            <input id="username" type="text">
+            <label for="password">password</label>
+            <input id="password" type="password">
+            <button type="button">Continue</button>
+
+            <p class="or-text">or sign-in with</p>
+            <!-- <button id="login-btn">Login</button> -->
+             <a href="/auth/google"><button class="sign-in_with_google">Sign in with Google</button></a>
+         
+            <!-- <button type="button" class="googleSignIn">Sign-in with google</button> -->
+            <p class="no-account">Don't have an account? <span><a href="#">Sign Up</a></span></p>
+            
+         </form>
+      </div>
+   </main>
 </body>
 </html>
