@@ -46,6 +46,10 @@ div.formDiv {
    align-items: center;
 }
 
+div.formDiv form {
+   gap:5px;
+}
+
 form.login-form {
    display: flex;
    flex-direction: column;
@@ -81,4 +85,19 @@ p.or-text {
 
 .or-text::after {
   margin-left: 10px;
+}
+
+legend {
+   font-family:Arial, Helvetica, sans-serif;
+   font-size: 1.5rem;
+   font-weight: 700;
+}
+
+button {
+   margin-block: 10px;
+   border: none;
+   background-color: var(--background);
+   font-size: medium;
+   color:var(--primary-white);
+   padding: 5px 10px;
 }
