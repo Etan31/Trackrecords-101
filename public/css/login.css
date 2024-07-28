@@ -99,5 +99,5 @@ button {
    background-color: var(--background);
    font-size: medium;
    color:var(--primary-white);
-   padding: 5px 10px;
+   padding-block: 5px;
 }
