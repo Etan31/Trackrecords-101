@@ -93,11 +93,18 @@ legend {
    font-weight: 700;
 }
 
+input {
+   border: 0.5px solid var(--white-25);
+   border-radius: 5px;
+   background-color: var(--lightblue);
+}
+
 button {
    margin-block: 10px;
    border: none;
    background-color: var(--background);
-   font-size: medium;
+   font-size: small;
    color:var(--primary-white);
-   padding-block: 5px;
+   padding-block: 10px;
+   border-radius: 5px;
 }
