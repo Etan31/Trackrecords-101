@@ -3,6 +3,10 @@
    --primary-white: #F9F7F7;
    --white:#fff;
    --white-25:rgba(255, 255, 255, 25%);
+   --gray: gray;
+   --gray-10: rgba(128, 128, 128, 0.10);
+   --gray-25: rgba(128, 128, 128, 0.25);
+   --gray-50: rgba(128, 128, 128, 0.50);
    --black: #000;
    --lightblue: #DBE2EF;
    --bg-1:hsla(230, 87%, 59%, 0.1);
@@ -15,7 +19,7 @@
    --circle:50px;
 
    /* highlighter */
-   --bg-1-1:hsla(230, 87%, 59%, 1);
+   --bg-1-1:rgb(2, 2, 3);
    --bg-2-1:rgba(32, 207, 238, 1);
    --bg-3-1:hsla(230, 87%, 59%, 1);
 }
@@ -93,8 +97,8 @@ legend {
    font-weight: 700;
 }
 
-input {
-   border: 0.5px solid var(--white-25);
+input{
+   border: 0.5px solid var(--gray-25);
    border-radius: 5px;
    background-color: var(--lightblue);
 }
