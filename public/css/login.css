@@ -52,6 +52,8 @@ div.formDiv {
 
 div.formDiv form {
    gap:5px;
+   width: 60%;
+   max-width:300px
 }
 
 form.login-form {
