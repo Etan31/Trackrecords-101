@@ -62,6 +62,17 @@ label {
    font-size: 12px;
 }
 
+button {
+   margin-block: 10px;
+   border: none;
+   background-color: var(--background);
+   font-size: small;
+   color:var(--primary-white);
+   padding-block: 10px;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
 
 
 
@@ -147,12 +158,3 @@ form label:nth-of-type(2) {
    margin-top: 5px;
 }
 
-button {
-   margin-block: 10px;
-   border: none;
-   background-color: var(--background);
-   font-size: small;
-   color:var(--primary-white);
-   padding-block: 10px;
-   border-radius: 5px;
-}
