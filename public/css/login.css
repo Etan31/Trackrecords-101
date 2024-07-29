@@ -33,6 +33,47 @@
    /* border: 1px solid red; */
 }
 
+
+/* ////////  General tag  //////// */
+
+legend {
+   font-family:Arial, Helvetica, sans-serif;
+   font-size: 1.5rem;
+   font-weight: 700;
+}
+
+input{
+   border: 0.5px solid var(--gray-25);
+   border-radius: 5px;
+   padding: 7px 10px;
+   background-color: var(--lightblue);
+
+}
+
+p {
+   font-family: var(--font-serif);
+   font-size: 12px;
+   display: flex;
+   justify-content: center;
+}
+
+label {
+   font-family: var(--font-serif);
+   font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .main-login {
    display: flex;
    flex-direction: row;
@@ -95,29 +136,11 @@ p.or-text {
   margin-left: 10px;
 }
 
-legend {
-   font-family:Arial, Helvetica, sans-serif;
-   font-size: 1.5rem;
-   font-weight: 700;
-}
 
-input{
-   border: 0.5px solid var(--gray-25);
-   border-radius: 5px;
-   padding: 7px 10px;
-   background-color: var(--lightblue);
-
-}
-
-p {
-   font-family: var(--font-serif);
-   font-size: 12px;
-   display: flex;
-   justify-content: center;
-}
 
 form p:first-of-type {
    margin-bottom: 10px;
+   font-weight: bold;
 }
 
 form label:nth-of-type(2) {
