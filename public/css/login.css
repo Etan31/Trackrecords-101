@@ -22,6 +22,8 @@
    --bg-1-1:rgb(2, 2, 3);
    --bg-2-1:rgba(32, 207, 238, 1);
    --bg-3-1:hsla(230, 87%, 59%, 1);
+
+   --font-serif: Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -102,7 +104,24 @@ legend {
 input{
    border: 0.5px solid var(--gray-25);
    border-radius: 5px;
+   padding: 7px 10px;
    background-color: var(--lightblue);
+
+}
+
+p {
+   font-family: var(--font-serif);
+   font-size: 12px;
+   display: flex;
+   justify-content: center;
+}
+
+form p:first-of-type {
+   margin-bottom: 10px;
+}
+
+form label:nth-of-type(2) {
+   margin-top: 5px;
 }
 
 button {
