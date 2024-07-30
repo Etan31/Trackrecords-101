@@ -118,6 +118,8 @@ form.login-form legend {
    justify-content: center;
    align-items: center;
    gap: 10px;
+   padding-block: 7.5px;
+   font-size: 12px;
 }
 
 p.or-text {
