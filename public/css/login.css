@@ -113,7 +113,11 @@ form.login-form legend {
 }
 
 .sign-in_with_google{
-   width: 100%
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
 }
 
 p.or-text {
