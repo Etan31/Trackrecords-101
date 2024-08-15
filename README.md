@@ -1,7 +1,12 @@
 ## Functionality:
 - Login with google
 - Track income and expenses
-- view analytics with graphs 
+- view analytics with graphs
+
+## Technology to be used:
+ - NodeJs
+ - Javascript
+ - Chart API
 
 
 ## Run locality:
