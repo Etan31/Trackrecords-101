@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Libre%20Caslon%20Text:700|Libre%20Caslon%20Text:400');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin:0;
+}
+
+body {
+  font-family: 'Libre Caslon Text';
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Libre Caslon Text';
+  font-weight: 700;
+}
+
+html {font-size: 100%;} /* 16px */
+
+h1 {font-size: 7.595rem; /* 121.44px */}
+
+h2 {font-size: 5.063rem; /* 80.96px */}
+
+h3 {font-size: 3.375rem; /* 54.08px */}
+
+h4 {font-size: 2.250rem; /* 36px */}
+
+h5 {font-size: 1.500rem; /* 24px */}
+
+small {font-size: 0.667rem; /* 10.72px */}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
