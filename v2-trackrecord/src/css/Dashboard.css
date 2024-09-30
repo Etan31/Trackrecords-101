@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css?family=Libre%20Caslon%20Text:700|Libre%20Caslon%20Text:400');
+@import url('./navigation.css');
+
+:root {
+  --main-text: #0b191e;
+  --main-bg: #f8fbfc;
+  --main-bg2: #EEF3FC;
+  --main-prim: #41a4c8;
+  --main-second: #89c9e1;
+  --main-accent: #58b7da;
+  --dark-blue: #277B9A;
+  --text: #0B191E;
+
+  --accent25: hsla(196, 64%, 60%, 0.25);
+  --accent10: hsla(196, 64%, 60%, 0.1);
+  --accent05: hsla(196, 64%, 60%, 0.05);
+
+  /* Theme */
+  /* 
+  :root[data-theme="light"] {
+    --text: #0b191e;
+    --background: #f8fbfc;
+    --primary: #41a4c8;
+    --secondary: #89c9e1;
+    --accent: #58b7da;
+  }
+  :root[data-theme="dark"] {
+    --text: #e1eff4;
+    --background: #030607;
+    --primary: #379abe;
+    --secondary: #1e5e76;
+    --accent: #2584a7;
+  }
+  */
+
+  /* Shades */
+  /* 
+  --text-50: #ecf5f8;
+  --text-100: #daebf1;
+  --text-200: #b5d7e3;
+  --text-300: #8fc3d6;
+  --text-400: #6aafc8;
+  --text-500: #459bba;
+  --text-600: #377c95;
+  --text-700: #295d70;
+  --text-800: #1c3e4a;
+  --text-900: #0e1f25;
+  --text-950: #070f13;
+
+  --background-50: #edf5f7;
+  --background-100: #dbebf0;
+  --background-200: #b8d6e0;
+  --background-300: #94c2d1;
+  --background-400: #70adc2;
+  --background-500: #4d99b3;
+  --background-600: #3d7a8f;
+  --background-700: #2e5c6b;
+  --background-800: #1f3d47;
+  --background-900: #0f1f24;
+  --background-950: #080f12;
+
+  --primary-50: #ebf6f9;
+  --primary-100: #d7ecf4;
+  --primary-200: #b0d9e8;
+  --primary-300: #88c6dd;
+  --primary-400: #61b3d1;
+  --primary-500: #39a0c6;
+  --primary-600: #2e809e;
+  --primary-700: #226077;
+  --primary-800: #17404f;
+  --primary-900: #0b2028;
+  --primary-950: #061014;
+
+  --secondary-50: #ebf6fa;
+  --secondary-100: #d6edf5;
+  --secondary-200: #aedaea;
+  --secondary-300: #85c8e0;
+  --secondary-400: #5db5d5;
+  --secondary-500: #34a3cb;
+  --secondary-600: #2a82a2;
+  --secondary-700: #1f627a;
+  --secondary-800: #154151;
+  --secondary-900: #0a2129;
+  --secondary-950: #051014;
+
+  --accent-50: #eaf6fa;
+  --accent-100: #d5edf6;
+  --accent-200: #abdbed;
+  --accent-300: #82c9e3;
+  --accent-400: #58b7da;
+  --accent-500: #2ea6d1;
+  --accent-600: #2584a7;
+  --accent-700: #1c637d;
+  --accent-800: #124254;
+  --accent-900: #09212a;
+  --accent-950: #051115; */
+
+
+  /* sizes */
+  --small: 0.667rem; /* 10.72px */
+
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin:0;
+}
+
+body {
+  font-family: 'Libre Caslon Text';
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Libre Caslon Text';
+  /* font-weight: 700; */
+}
+
+.App.dashboard {
+  display:flex;
+  flex-direction: row;
+}
+
+
+.container {  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 70px 1fr 1fr 1fr;
+  grid-auto-columns: 1fr;
+  gap: 35px 25px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "heading heading"
+    "total-balance income"
+    "financial-insight financial-insight"
+    "recent-transaction recent-transaction";
+    height: 100vh;
+    padding: 20px;
+    width: 100%;
+}
+
+.heading { 
+  grid-area: heading;
+}
+
+.total-balance {  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "ic-balance . percent-change"
+    "balance-info balance-info balance-info"
+    "balance-info balance-info balance-info";
+  grid-area: total-balance;
+  background-color: var(--accent10);
+  border-radius: 10px;
+}
+
+.balance-info { grid-area: balance-info; }
+
+.percent-change { grid-area: percent-change; }
+
+.ic-balance { grid-area: ic-balance; }
+
+.income {  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "ic-income . percent-changed"
+    "income-info income-info income-info"
+    "income-info income-info income-info";
+  grid-area: income;
+  background-color: var(--accent10);
+  border-radius: 10px;
+}
+
+.ic-income { grid-area: ic-income; }
+
+.percent-changed { grid-area: percent-changed; }
+
+.income-info { grid-area: income-info; }
+
+.financial-insight { 
+  grid-area: financial-insight;
+  background-color: var(--accent10);
+  border-radius: 10px;
+}
+
+.recent-transaction { 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "heading-transaction . view-all"
+    "transaction-table transaction-table transaction-table"
+    "transaction-table transaction-table transaction-table";
+  grid-area: recent-transaction;
+  background-color: var(--accent10);
+  border-radius: 10px;
+}
+
+.heading-transaction { grid-area: heading-transaction; }
+
+.view-all { grid-area: view-all; }
+
+.transaction-table { grid-area: transaction-table; }

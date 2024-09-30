@@ -1,0 +1,61 @@
+nav {
+   width:350px;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   background-color: var(--main-prim);
+}
+
+.nav-items {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+
+.logo {
+   display: flex;
+   justify-content: center;
+   padding-block: 20px;
+}
+
+.logo img {
+   width: 70%;
+   filter: brightness(10);
+}
+
+.others, .account {
+  margin-bottom: 20px;
+}
+
+
+.others {
+  margin-bottom: 50px;
+}
+
+.account {
+  margin-bottom: 10px;
+}
+
+ul {
+   list-style: none;
+   display: flex;
+   flex-direction: column;
+   gap:10px;
+   width: 90%;
+}
+
+li {
+   display: flex;
+   align-items: center;
+   justify-content: start;
+   /* border: 1px solid red; */
+   gap: 20px;
+   color: var(--main-text);
+}
+
+li > .ic img {
+   width: 25px;
+   height: 25px;
+}
