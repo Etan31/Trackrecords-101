@@ -35,7 +35,13 @@ nav {
 }
 
 .account {
-  margin-bottom: 10px;
+   margin-bottom: 10px;
+   margin-bottom: 10px;
+   display: flex;
+   gap: 10px;
+   width: 100%;
+   padding: 10px;
+   color:var(--main-bg)
 }
 
 ul {
@@ -43,7 +49,8 @@ ul {
    display: flex;
    flex-direction: column;
    gap:10px;
-   width: 90%;
+   width: 100%;
+   margin-top:30px;
 }
 
 li {
@@ -53,9 +60,38 @@ li {
    /* border: 1px solid red; */
    gap: 20px;
    color: var(--main-text);
+   padding: 20px 10px;
+   height: 30px;
+   color: var(--main-bg);
 }
 
-li > .ic img {
-   width: 25px;
-   height: 25px;
+li > .ic img,
+.ic img {
+   width: 20px;
+   height: 20px;
+   filter: invert(1);
 }
+
+li:hover,
+.account:hover {
+   background-color: var(--main-accent);
+   color: var(--main-text);
+   animation: hover-list 0.2s ease-in-out forwards;
+   cursor: pointer;
+}
+
+li:hover img,
+.account:hover .ic img {
+   filter: none;
+}
+
+
+@keyframes hover-list {
+  0% {
+    background-color: unset;
+  }
+  100% {
+    background-color: var(--main-accent);
+  }
+}
+

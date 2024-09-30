@@ -7,6 +7,9 @@ import ICTransaction from './../img/icons/ic-transact.svg';
 import ICBudget from './../img/icons/ic-wallet.svg';
 import ICGraph from './../img/icons/ic-graph.svg';
 import ICNotif from './../img/icons/ic-notif.svg';
+import ICHelp from './../img/icons/ic-help.svg';
+import ICSettings from './../img/icons/ic-settings.svg';
+import ICAccount from './../img/icons/ic-account.svg';
 
 
 function App() {
@@ -53,11 +56,15 @@ function App() {
         <div className="others">
           <ul>
             <li>
-              <div className="ic"></div>
+              <div className="ic">
+                <img src={ICHelp} alt="Help icon" />
+              </div>
               <div className="nav-name">Help</div>
             </li>
             <li>
-              <div className="ic"></div>
+              <div className="ic">
+                <img src={ICSettings} alt="Settings icon" />
+              </div>
               <div className="nav-name">Settings</div>
             </li>
           </ul>
@@ -65,7 +72,9 @@ function App() {
 
         {/* TODO: change the text color of the login*/}
         <div className="account">
-          <div className="ic"></div>
+          <div className="ic">
+            <img src={ICAccount} alt="Account icon" />
+          </div>
           <div className="nav-name">Login</div>
         </div>
       </nav>
