@@ -1,12 +1,14 @@
 nav {
-   width:350px;
+   width: 250px;
    height: 100vh;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
    background-color: var(--main-prim);
+   position: fixed;
+   left: 0; 
+   top: 0; 
 }
-
 .nav-items {
   flex-grow: 1;
   display: flex;

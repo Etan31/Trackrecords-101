@@ -1,17 +1,19 @@
 import './../css/Dashboard.css';
 import Logo from './../img/ic-trackrecord.png';
 import Graph from './../components/Graph';
+import FinanceInsight from './../components/FinancialInsight'
 
 // icons
-import ICHome from './../img/icons/ic-home.svg';
-import ICTransaction from './../img/icons/ic-transact.svg';
-import ICBudget from './../img/icons/ic-wallet.svg';
-import ICGraph from './../img/icons/ic-graph.svg';
-import ICNotif from './../img/icons/ic-notif.svg';
-import ICHelp from './../img/icons/ic-help.svg';
-import ICSettings from './../img/icons/ic-settings.svg';
-import ICAccount from './../img/icons/ic-account.svg';
-import ICAddWallet from './../img/icons/ic-add-wallet.svg'
+  import ICHome from './../img/icons/ic-home.svg';
+  import ICTransaction from './../img/icons/ic-transact.svg';
+  import ICBudget from './../img/icons/ic-wallet.svg';
+  import ICGraph from './../img/icons/ic-graph.svg';
+  import ICNotif from './../img/icons/ic-notif.svg';
+  import ICHelp from './../img/icons/ic-help.svg';
+  import ICSettings from './../img/icons/ic-settings.svg';
+  import ICAccount from './../img/icons/ic-account.svg';
+  import ICAddWallet from './../img/icons/ic-add-wallet.svg'
+//
 
 function App() {
 
@@ -83,11 +85,12 @@ function App() {
         </div>
       </nav>
 
-      <div className="container">
+      <div className="container mainDashboard">
         <header className="heading">
           <h1>Good Morning, <span id="name">Tristan</span></h1>
           <p>Welcome to your financial Insights.</p>
         </header>
+
         <div className="total-balance">
           <div className="ic-balance">
             <img src={ICBudget} width="30" height="30" alt="Wallet icon" />
@@ -105,6 +108,7 @@ function App() {
 
           </div>
         </div>
+
         <div className="total-income">
           <div className="ic-income">
             <img src={ICAddWallet} width="30" height="30" alt="Add wallet icon" />
@@ -122,7 +126,13 @@ function App() {
 
           </div>
         </div>
-        <div className="financial-insight"></div>
+
+        {/* financial Insight Information */}
+        <div className="financial-insight">
+          <FinanceInsight />
+        </div>
+
+        {/* History of recent transaction you've made */}
         <div className="recent-transaction">
           <div className="heading-transaction"></div>
           <div className="view-all"></div>
