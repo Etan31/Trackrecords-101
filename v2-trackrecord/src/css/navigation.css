@@ -57,12 +57,30 @@ li {
    display: flex;
    align-items: center;
    justify-content: start;
-   /* border: 1px solid red; */
    gap: 20px;
-   color: var(--main-text);
    padding: 20px 10px;
    height: 30px;
    color: var(--main-bg);
+   position: relative; 
+   overflow: hidden;
+}
+
+/* TODO: Change this when changed on route  */
+.nav-items ul li:first-child {
+   background-color: var(--main-accent);   
+}
+
+.nav-items ul li:first-child::after {
+  content: '';
+  position: absolute;
+  right: 0; 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent; /* Triangle shape: no color on top */
+  border-bottom: 15px solid transparent; /* Triangle shape: no color on bottom */
+  border-right: 15px solid var(--main-bg); /* Triangle pointing to the left with background color */
 }
 
 li > .ic img,
