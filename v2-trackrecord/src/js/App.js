@@ -12,7 +12,8 @@ import FinanceInsight from './../components/FinancialInsight'
   import ICHelp from './../img/icons/ic-help.svg';
   import ICSettings from './../img/icons/ic-settings.svg';
   import ICAccount from './../img/icons/ic-account.svg';
-  import ICAddWallet from './../img/icons/ic-add-wallet.svg'
+  import ICAddWallet from './../img/icons/ic-add-wallet.svg';
+  import ICAdd from './../img/icons/add.svg';
 //
 
 function App() {
@@ -138,6 +139,11 @@ function App() {
           <div className="view-all"></div>
           <div className="transaction-table"></div>
         </div>
+      </div>
+
+      <div className="addtransaction">
+          Add record
+          <img src={ICAdd} alt="Cross icon" />
       </div>
     </div>
   );

@@ -406,3 +406,27 @@ h1, h2, h3, h4, h5 {
   margin-right: 5px;
   /* border-radius: 50%; */
 }
+
+
+
+.addtransaction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 15px;
+  border:none;
+  border-radius: 50px;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  background-color: var(--main-prim);
+  color: var(--main-text);
+  gap:10px;
+}
+
+.addtransaction img{
+  /* filter: invert(1); */
+  opacity: 70%;
+  width: 25px;
+  height: 25px;
+}
