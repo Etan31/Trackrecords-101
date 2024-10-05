@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Libre%20Caslon%20Text:700|Libre%20Caslon%20Text:400');
 @import url('./navigation.css');
+@import url('./Transaction.css');
 
 :root {
   --main-text: #0b191e;
@@ -207,19 +208,6 @@ h1, h2, h3, h4, h5 {
   display: flex;
 }
 
-/* .financial-insight { 
-  background-color: var(--accent10);
-  border-radius: 10px;
-  margin-top: 25px;
-  grid-template-areas: 
-    "info-financial info-financial note-financial"
-    "info-financial info-financial note-financial"
-    "info-financial info-financial note-financial"; 
-  grid-area: financial-insight;
-} */
-/* 
-.info-financial { grid-area: info-financial; }
-.note-financial { grid-area: note-financial; } */
 
 .financial-insight {
   display: grid;

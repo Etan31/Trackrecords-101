@@ -93,7 +93,9 @@ li > .ic img,
 }
 
 li:hover,
-.account:hover {
+.account:hover,
+li:hover a,
+.account:hover a {
    background-color: var(--main-accent);
    color: var(--main-text);
    animation: hover-list 0.2s ease-in-out forwards;
@@ -105,6 +107,14 @@ li:hover img,
    filter: none;
 }
 
+li a,
+.account a {
+   text-decoration: none;
+   color: var(--main-bg);
+   display: flex;
+   align-items: center;
+   gap: 25px
+}
 
 @keyframes hover-list {
   0% {

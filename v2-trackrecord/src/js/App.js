@@ -1,152 +1,122 @@
-import './../css/Dashboard.css';
-import Logo from './../img/ic-trackrecord.png';
+import React, { useState } from 'react';
+
+// css
+  import './../css/Dashboard.css';
+  import './../css/Alerts.css';
+  import './../css/Analytics.css';
+  import './../css/Help.css';
+  import './../css/Budget.css';
+  import './../css/Login.css';
+  import './../css/Settings.css';
+// 
+
 import Graph from './../components/Graph';
-import FinanceInsight from './../components/FinancialInsight'
+import FinanceInsight from './../components/FinancialInsight';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+
+import NavBar from './../components/NavBar';
 
 // icons
-  import ICHome from './../img/icons/ic-home.svg';
-  import ICTransaction from './../img/icons/ic-transact.svg';
-  import ICBudget from './../img/icons/ic-wallet.svg';
-  import ICGraph from './../img/icons/ic-graph.svg';
-  import ICNotif from './../img/icons/ic-notif.svg';
-  import ICHelp from './../img/icons/ic-help.svg';
-  import ICSettings from './../img/icons/ic-settings.svg';
-  import ICAccount from './../img/icons/ic-account.svg';
-  import ICAddWallet from './../img/icons/ic-add-wallet.svg';
   import ICAdd from './../img/icons/add.svg';
+  import ICAddWallet from './../img/icons/ic-add-wallet.svg';
+  import ICBudget from './../img/icons/ic-wallet.svg';
+
 //
 
-function App() {
+// pages module
+  import Transaction from './../pages/Transaction';
+  import Budget from './../pages/Budget';
+  import Analytics from './../pages/Analytics';
+  import Alerts from './../pages/Alerts';
+  import Help from './../pages/Help';
+  import Settings from './../pages/Settings';
+  import Login from './../pages/Login';
+// 
 
-  // Todo: change this values later.
+function App() {
+  return (
+    <div className="App dashboard">
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/transaction" element={<Transaction />} />
+          <Route path="/budget" element={<Budget />} />
+          <Route path="/analytics" element={<Analytics />} />
+          <Route path="/alerts" element={<Alerts />} />
+          <Route path="/help" element={<Help />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/login" element={<Login />} />
+          {/* Main Dashboard route */}
+          <Route path="/" element={<DashboardContainer />} />
+        </Routes>
+      </Router>
+    </div>
+  );
+}
+
+function DashboardContainer() {
+  const location = useLocation(); // Now useLocation() will work here
+
   const balanceData = [10, 25, 90, 45, 0, 79, 60, 85];
   const totalIncomeData = [90, 85, 88, 92, 97, 95, 96, 100];
 
+  // Only render the mainDashboard if we're on the root path
   return (
-    <div className="App dashboard">
-      <nav>
-        <div className="logo">
-          <img src={Logo} alt="Track record logo" />
-        </div>
-        <div className="nav-items">
-          <ul>
-            <li>
-              <div className="ic">
-                <img src={ICHome} alt="Dashboard icon" />
-              </div>
-              <div className="nav-name">Dashboard</div>
-            </li>
-            <li>
-              <div className="ic">
-                <img src={ICTransaction} alt="Transaction icon" />
-              </div>
-              <div className="nav-name">Transaction</div>
-            </li>
-            <li>
-              <div className="ic">
-                <img src={ICBudget} alt="Budget icon" />
-              </div>
-              <div className="nav-name">Budget</div>
-            </li>
-            <li>
-              <div className="ic">
-                <img src={ICGraph} alt="Analytics icon" />
-              </div>
-              <div className="nav-name">Analytics</div>
-            </li>
-            <li>
-              <div className="ic">
-                <img src={ICNotif} alt="Alerts icon" />
-              </div>
-              <div className="nav-name">Alerts</div>
-            </li>
-          </ul>
-        </div>
-        <div className="others">
-          <ul>
-            <li>
-              <div className="ic">
-                <img src={ICHelp} alt="Help icon" />
-              </div>
-              <div className="nav-name">Help</div>
-            </li>
-            <li>
-              <div className="ic">
-                <img src={ICSettings} alt="Settings icon" />
-              </div>
-              <div className="nav-name">Settings</div>
-            </li>
-          </ul>
-        </div>
-        <div className="account">
-          <div className="ic">
-            <img src={ICAccount} alt="Account icon" />
-          </div>
-          <div className="nav-name">Login</div>
-        </div>
-      </nav>
+    <>
+      {location.pathname === '/' && (
+        <div className="container mainDashboard">
+          <header className="heading">
+            <h1>Good Morning, <span id="name">Tristan</span></h1>
+            <p>Welcome to your financial Insights.</p>
+          </header>
 
-      <div className="container mainDashboard">
-        <header className="heading">
-          <h1>Good Morning, <span id="name">Tristan</span></h1>
-          <p>Welcome to your financial Insights.</p>
-        </header>
-
-        <div className="total-balance">
-          <div className="ic-balance">
-            <img src={ICBudget} width="30" height="30" alt="Wallet icon" />
-          </div>
-          <div className="percent-change">+5%</div>
-          <div className="balance-info">
-            <div className="txt">
-              <p>Total Balance:</p>
-              <p className="balance-num" id="balance-num"> {/*Unused ID*/}
-                ₱ 20, 200.75
-              </p>
+          <div className="total-balance">
+            <div className="ic-balance">
+              <img src={ICBudget} width="30" height="30" alt="Wallet icon" />
             </div>
+            <div className="percent-change">+5%</div>
+            <div className="balance-info">
+              <div className="txt">
+                <p>Total Balance:</p>
+                <p className="balance-num" id="balance-num">₱ 20, 200.75</p>
+              </div>
 
-            <Graph label="Balance" dataValues={balanceData} />
-
-          </div>
-        </div>
-
-        <div className="total-income">
-          <div className="ic-income">
-            <img src={ICAddWallet} width="30" height="30" alt="Add wallet icon" />
-          </div>
-          <div className="percent-changed">-2%</div>
-          <div className="income-info">
-            <div className="txt">
-              <p>Total Income:</p>
-              <p className="income-num" id="income-num"> {/*Unused ID*/}
-                ₱ 20, 200.75
-              </p>
+              <Graph label="Balance" dataValues={balanceData} />
             </div>
+          </div>
 
-            <Graph label="Income" dataValues={totalIncomeData} />
+          <div className="total-income">
+            <div className="ic-income">
+              <img src={ICAddWallet} width="30" height="30" alt="Add wallet icon" />
+            </div>
+            <div className="percent-changed">-2%</div>
+            <div className="income-info">
+              <div className="txt">
+                <p>Total Income:</p>
+                <p className="income-num" id="income-num">₱ 20, 200.75</p>
+              </div>
 
+              <Graph label="Income" dataValues={totalIncomeData} />
+            </div>
+          </div>
+
+          <div className="financial-insight">
+            <FinanceInsight />
+            <div className="note-financial"></div>
+          </div>
+
+          <div className="recent-transaction">
+            <div className="heading-transaction"></div>
+            <div className="view-all"></div>
+            <div className="transaction-table"></div>
+          </div>
+          <div className="addtransaction">
+            Add record
+            <img src={ICAdd} alt="Cross icon" />
           </div>
         </div>
-
-        {/* financial Insight Information */}
-        <div className="financial-insight">
-          <FinanceInsight />
-          <div className="note-financial"></div>
-        </div>
-
-        {/* History of recent transaction you've made */}
-        <div className="recent-transaction">
-          <div className="heading-transaction"></div>
-          <div className="view-all"></div>
-          <div className="transaction-table"></div>
-        </div>
-      </div>
-
-      <div className="addtransaction">
-          Add record
-          <img src={ICAdd} alt="Cross icon" />
-      </div>
-    </div>
+      )}
+    </>
   );
 }
 
