@@ -5,7 +5,7 @@
   --main-text: #0b191e;
   --main-bg: #f8fbfc;
   --main-bg2: #EEF3FC;
-  --main-prim: rgb(65, 164, 200);
+  --main-prim: #41a4c8;
   --main-second: rgb(137, 201, 225);
   --main-accent: #58b7da;
   --dark-blue: #277b9a;
@@ -207,8 +207,40 @@ h1, h2, h3, h4, h5 {
   display: flex;
 }
 
-.financial-insight { 
+/* .financial-insight { 
+  background-color: var(--accent10);
+  border-radius: 10px;
+  margin-top: 25px;
+  grid-template-areas: 
+    "info-financial info-financial note-financial"
+    "info-financial info-financial note-financial"
+    "info-financial info-financial note-financial"; 
   grid-area: financial-insight;
+} */
+/* 
+.info-financial { grid-area: info-financial; }
+.note-financial { grid-area: note-financial; } */
+
+.financial-insight {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "info-financial info-financial info-financial  note-financial"
+    "info-financial info-financial info-financial note-financial"
+    "info-financial info-financial info-financial note-financial"; 
+  grid-area: financial-insight; 
+}
+
+.info-financial { 
+  grid-area: info-financial; 
+  margin-right: 25px;
+  padding: 25px;
+}
+.note-financial { grid-area: note-financial; }
+
+.info-financial, .note-financial {
   background-color: var(--accent10);
   border-radius: 10px;
   margin-top: 25px;
@@ -336,9 +368,9 @@ h1, h2, h3, h4, h5 {
 }
 
 .financial-insight canvas {
-  /* min-width: 170px; */
-  /* width: 100% !important;
-  height: 100%; */
+    /* width: 275px !important;
+    height: auto !important;
+  width: 275px; */
 }
 
 .chart-info {
@@ -357,21 +389,39 @@ h1, h2, h3, h4, h5 {
   width: clamp(300px, 50vw, 550px);
   /* width: 80%; */
   position: relative;
-}
-
-.chart-detail p {
-  color: var(--dark-blue);
-  opacity: 60%;
-  width: 50%;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .chart-detail, .chart-graph {
   height: 100%
 }
 
+.chart-detail p {
+  color: var(--dark-blue);
+  opacity: 60%;
+  width: 85%;
+  font-size: 20px;
+}
+
+.chart-detail {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+}
+
+img.arrow-anim {
+  opacity: 35%; 
+}
 
 /* //Legend chart */
 /* FinancialInsight.css */
+
+div#legend-container {
+  position: relative;
+  right: -50px;
+}
 
 .custom-chart-legend {
   list-style: none;
@@ -387,7 +437,6 @@ h1, h2, h3, h4, h5 {
   display: flex;
   gap: unset;
   align-items: center;
-  margin-right: 10px;
   color: var(--main-text);
   height: 20px !important;
   padding: 10px;

@@ -1,10 +1,11 @@
 // FinancialInsight.js
 
 import IncomeExpenseBarChart from './../components/IncomeExpenseChart';
+import ArrowGif from './../img/gif/anim-arrow.gif'
 
 const FinancialInsight = () => {
   return (
-    <div className="FinancialInsight-container">
+    <div className="FinancialInsight-container info-financial">
       <header>
         <div className="left">
           <h2>Financial Insights</h2>
@@ -23,7 +24,9 @@ const FinancialInsight = () => {
       <div className="chart-info">
         <div className="chart-detail">
           <p>Click on this chart for more info.</p>
-          <div className="ic-arrow">-></div>
+          <div className="ic-arrow">
+            <img className="arrow-anim" src={ArrowGif} alt="Animated arrow" />
+          </div>
         </div>
         <div className="chart-graph">
           <IncomeExpenseBarChart />

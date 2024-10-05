@@ -131,6 +131,7 @@ function App() {
         {/* financial Insight Information */}
         <div className="financial-insight">
           <FinanceInsight />
+          <div className="note-financial"></div>
         </div>
 
         {/* History of recent transaction you've made */}
