@@ -224,7 +224,7 @@ h1, h2, h3, h4, h5 {
 .financial-insight {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr; 
-  grid-template-rows: 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
   gap: 0px 0px; 
   grid-template-areas: 
     "info-financial info-financial info-financial  note-financial"
@@ -367,11 +367,11 @@ h1, h2, h3, h4, h5 {
   border:none;
 }
 
-.financial-insight canvas {
-    /* width: 275px !important;
+/* .financial-insight canvas {
+    width: 275px !important;
     height: auto !important;
-  width: 275px; */
-}
+  width: 275px;
+} */
 
 .chart-info {
   display: flex;
