@@ -255,7 +255,6 @@ h1, h2, h3, h4, h5 {
 
 .view-all { grid-area: view-all; }
 
-.transaction-table { grid-area: transaction-table; }
 
 /* TODO: make this responsive */
 .balance-info, 
@@ -467,3 +466,30 @@ div#legend-container {
   width: 25px;
   height: 25px;
 }
+
+
+/* Recent Transaction */
+.transaction-table { 
+  grid-area: transaction-table; 
+  overflow-y: auto;
+}
+
+.recent-transaction {
+  padding: 25px;
+}
+
+.heading-transaction header {
+  display: flex;
+  align-items: center;
+  gap: 5px
+}
+
+.transaction-table table {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.transaction-table thead td {
+  font-weight: 800;
+  padding-block: 10px;
+} 

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useLocation} from 'react-router-dom';
 
 // icons
    import Logo from './../img/ic-trackrecord.png';
@@ -15,6 +15,9 @@ import { Link } from 'react-router-dom';
 //
 
 function NavBar() {
+
+  const [activeLink, setActiveLink] = useState('/')
+
   const pages = [
     { name: 'Dashboard', icon: ICHome, route: '/' },
     { name: 'Transaction', icon: ICTransaction, route: '/transaction' },
@@ -28,16 +31,25 @@ function NavBar() {
     { name: 'Settings', icon: ICSettings, route: '/settings' }
   ];
 
+  // to change current navigation active
+  const handleLinkClick = (path) => {
+    setActiveLink(path);  
+  };
+
   const renderNavItems = (items) =>
     items.map((item) => (
-      <li key={item.name}>
-        <Link to={item.route}>
+      <Link 
+      to={item.route}
+      key={item.name}
+      onClick={() => handleLinkClick(item.route)}>
+
+        <li className={activeLink === item.route ? 'active' : ''}>
           <div className="ic">
             <img src={item.icon} alt={`${item.name} icon`} />
           </div>
           <div className="nav-name">{item.name}</div>
-        </Link>
-      </li>
+        </li>
+      </Link>
     ));
 
   return (

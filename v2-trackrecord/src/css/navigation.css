@@ -68,11 +68,11 @@ li {
 }
 
 /* TODO: Change this when changed on route  */
-.nav-items ul li:first-child {
+/* .nav-items ul a:first-child {
    background-color: var(--main-accent);   
 }
 
-.nav-items ul li:first-child::after {
+.nav-items ul a:first-child::after {
   content: '';
   position: absolute;
   right: 0; 
@@ -80,10 +80,43 @@ li {
   transform: translateY(-50%);
   width: 0;
   height: 0;
-  border-top: 15px solid transparent; /* Triangle shape: no color on top */
-  border-bottom: 15px solid transparent; /* Triangle shape: no color on bottom */
-  border-right: 15px solid var(--main-bg); /* Triangle pointing to the left with background color */
+  border-top: 15px solid transparent; 
+  border-bottom: 15px solid transparent; 
+  border-right: 15px solid var(--main-bg); 
+} */
+
+/* Default styling for nav items */
+.nav-items ul a li {
+  padding: 20px 20px;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
 }
+
+/* Active class for the selected link */
+.nav-items ul a li.active {
+  background-color: var(--main-accent); /* Highlight the active link */
+  color: var(--main-text);
+}
+
+.nav-items ul a li .ic img.active {
+   filter: none;
+}
+
+/* Active link with arrow */
+.nav-items ul a li.active::after {
+  content: '';
+  position: absolute;
+  right: 0; 
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent; 
+  border-bottom: 15px solid transparent; 
+  border-right: 15px solid var(--main-bg); /* Arrow pointing to the right */
+}
+
 
 li > .ic img,
 .ic img {
@@ -115,6 +148,13 @@ li a,
    align-items: center;
    gap: 25px
 }
+
+.nav-items ul a,
+.others ul a {
+   color: var(--main-accent);
+   text-decoration: none;
+} 
+
 
 @keyframes hover-list {
   0% {

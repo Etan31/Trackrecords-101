@@ -33,6 +33,11 @@ import NavBar from './../components/NavBar';
   import Login from './../pages/Login';
 // 
 
+// components
+import RecentTransaction from './../components/transaction/RecentTransaction';
+
+// 
+
 function App() {
   return (
     <div className="App dashboard">
@@ -105,11 +110,8 @@ function DashboardContainer() {
             <div className="note-financial"></div>
           </div>
 
-          <div className="recent-transaction">
-            <div className="heading-transaction"></div>
-            <div className="view-all"></div>
-            <div className="transaction-table"></div>
-          </div>
+          <RecentTransaction />
+          
           <div className="addtransaction">
             Add record
             <img src={ICAdd} alt="Cross icon" />
