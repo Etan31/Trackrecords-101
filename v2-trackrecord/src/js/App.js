@@ -12,14 +12,15 @@ import React, { useState } from 'react';
 
 import Graph from './../components/Graph';
 import FinanceInsight from './../components/FinancialInsight';
+import FinancialNotes from './../components/FinancialNotes';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
 import NavBar from './../components/NavBar';
 
 // icons
-  import ICAdd from './../img/icons/add.svg';
-  import ICAddWallet from './../img/icons/ic-add-wallet.svg';
-  import ICBudget from './../img/icons/ic-wallet.svg';
+  import ICAdd from './../assets/img/icons/add.svg';
+  import ICAddWallet from './../assets/img/icons/ic-add-wallet.svg';
+  import ICBudget from './../assets/img/icons/ic-wallet.svg';
 
 //
 
@@ -60,7 +61,7 @@ function App() {
 }
 
 function DashboardContainer() {
-  const location = useLocation(); // Now useLocation() will work here
+  const location = useLocation(); 
 
   const balanceData = [10, 25, 90, 45, 0, 79, 60, 85];
   const totalIncomeData = [90, 85, 88, 92, 97, 95, 96, 100];
@@ -107,7 +108,7 @@ function DashboardContainer() {
 
           <div className="financial-insight">
             <FinanceInsight />
-            <div className="note-financial"></div>
+            <FinancialNotes />
           </div>
 
           <RecentTransaction />

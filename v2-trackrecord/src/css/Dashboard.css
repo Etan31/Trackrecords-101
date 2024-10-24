@@ -121,6 +121,10 @@ h1, h2, h3, h4, h5 {
   /* font-weight: 700; */
 }
 
+h2 {
+  font-size: 1.2rem;
+}
+
 .App.dashboard {
   display:flex;
   flex-direction: row;
@@ -402,6 +406,45 @@ img.arrow-anim {
   opacity: 35%; 
 }
 
+/* TODO: add a transparent background on the shadow */
+.note_header {
+  position: sticky;
+  top: -25px;
+  height: 30px;
+  z-index: 1;
+  background-color: var(--main-accent);
+  padding-block: 5px;
+}
+
+section.note-financial {
+  padding: 25px;
+  height: 300px;
+  overflow: auto;
+  background: var(--main-accent);
+}
+
+img.ic_drag {
+  width: 15px;
+}
+
+.notes_list {
+  all:initial;
+  overflow-y: auto;
+}
+
+
+li.notes_list ul p {
+  color: var(--main-text);
+}
+
+li.notes_list ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+
 /* //Legend chart */
 /* FinancialInsight.css */
 
@@ -469,6 +512,7 @@ div#legend-container {
 
 
 /* Recent Transaction */
+/* TODO: change the color of the fonts */
 .transaction-table { 
   grid-area: transaction-table; 
   overflow-y: auto;

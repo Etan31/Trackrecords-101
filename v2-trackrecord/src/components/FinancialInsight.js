@@ -1,7 +1,7 @@
 // FinancialInsight.js
 
 import IncomeExpenseBarChart from './../components/IncomeExpenseChart';
-import ArrowGif from './../img/gif/anim-arrow.gif'
+import ArrowGif from './../assets/img/gif/anim-arrow.gif'
 
 const FinancialInsight = () => {
   return (

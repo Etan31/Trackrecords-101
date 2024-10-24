@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { Link, useLocation} from 'react-router-dom';
 
 // icons
-   import Logo from './../img/ic-trackrecord.png';
-   import ICHome from './../img/icons/ic-home.svg';
-   import ICTransaction from './../img/icons/ic-transact.svg';
-   import ICBudget from './../img/icons/ic-wallet.svg';
-   import ICGraph from './../img/icons/ic-graph.svg';
-   import ICNotif from './../img/icons/ic-notif.svg';
-   import ICHelp from './../img/icons/ic-help.svg';
-   import ICSettings from './../img/icons/ic-settings.svg';
-   import ICAccount from './../img/icons/ic-account.svg';
+   import Logo from './../assets/img/ic-trackrecord.png';
+   import ICHome from './../assets/img/icons/ic-home.svg';
+   import ICTransaction from './../assets/img/icons/ic-transact.svg';
+   import ICBudget from './../assets/img/icons/ic-wallet.svg';
+   import ICGraph from './../assets/img/icons/ic-graph.svg';
+   import ICNotif from './../assets/img/icons/ic-notif.svg';
+   import ICHelp from './../assets/img/icons/ic-help.svg';
+   import ICSettings from './../assets/img/icons/ic-settings.svg';
+   import ICAccount from './../assets/img/icons/ic-account.svg';
 
 //
 
