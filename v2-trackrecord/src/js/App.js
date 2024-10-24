@@ -32,14 +32,20 @@ import NavBar from './../components/NavBar';
   import Help from './../pages/Help';
   import Settings from './../pages/Settings';
   import Login from './../pages/Login';
-// 
+//
+
+// hooks
+  import useModal from './../hook/useModal';
+//
 
 // components
-import RecentTransaction from './../components/transaction/RecentTransaction';
+  import RecentTransaction from './../components/transaction/RecentTransaction';
 
 // 
 
 function App() {
+  const { isOpen, openModal, closeModal } = useModal(); // hook for displaying add transaction modal
+ 
   return (
     <div className="App dashboard">
       <Router>
@@ -62,6 +68,7 @@ function App() {
 
 function DashboardContainer() {
   const location = useLocation(); 
+  const { isOpen, openModal, closeModal} = useModal();
 
   const balanceData = [10, 25, 90, 45, 0, 79, 60, 85];
   const totalIncomeData = [90, 85, 88, 92, 97, 95, 96, 100];
@@ -113,10 +120,20 @@ function DashboardContainer() {
 
           <RecentTransaction />
           
-          <div className="addtransaction">
-            Add record
-            <img src={ICAdd} alt="Cross icon" />
-          </div>
+    <button id="openModal" className="addtransaction" onClick={openModal}>
+        Add record
+        <img src={ICAdd} alt="Cross icon" />
+      </button>
+
+      {/* Use the native dialog element */}
+      <dialog id="modal" className="dialog" open={isOpen}>
+        <div className="modal-content">
+          <button id="closeModal" className="dialog-close-btn" onClick={closeModal}>
+            Close
+          </button>
+          <p>A pop-up modal component made with the native HTML dialog element with custom styles.</p>
+        </div>
+      </dialog>
         </div>
       )}
     </>
