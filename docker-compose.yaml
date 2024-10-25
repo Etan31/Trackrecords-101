@@ -1,0 +1,13 @@
+# version: '3.8'
+services:
+  frontend:
+    build:
+      context: ./v2-trackrecord
+    container_name: trackrecord_c
+    ports:
+      - '3000:3000'      # Add "-" at the beginning to make it a YAML list
+    # volumes:
+    #   - . /v2-trackrecord:/app
+    #   - ./app/node_modules
+    stdin_open: true
+    tty: true
