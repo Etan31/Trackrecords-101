@@ -74,7 +74,7 @@ Contributions are welcome! Follow these steps to contribute:
     ```
 5. **Submit a pull request** for review.
 
-Please make sure to follow the [Code of Conduct](CODE_OF_CONDUCT.md) and check the [Contributing Guidelines](CONTRIBUTING.md) (if available).
+Please make sure to follow the [Code of Conduct](CODE_OF_CONDUCT.md) and check the [Contributing Guidelines](CONTRIBUTING.md).
 
 ## 📄 License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
