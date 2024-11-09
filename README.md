@@ -1,6 +1,6 @@
 # Expense Tracker
 
-![Expense Tracker Banner](https://user-images.githubusercontent.com/placeholder.png) <!-- Add a banner image if available -->
+![Expense Tracker Banner](https://github.com/user-attachments/assets/6fbe9583-cc73-4d9f-97e7-383b022db58b)
 
 A web application to track your income and expenses effectively. Manage your financial data with features like transactions, budgeting, analytics, and alerts. The app also includes sections for Help, Settings, and a login page to keep your data secure.
 
