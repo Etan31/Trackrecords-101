@@ -1,13 +1,15 @@
-# version: '3.8'
+version: '3.8'
 services:
   frontend:
-    build:
-      context: ./v2-trackrecord
+    build: ./v2-trackrecord
     container_name: trackrecord_c
     ports:
-      - '3000:3000'      # Add "-" at the beginning to make it a YAML list
-    # volumes:
-    #   - . /v2-trackrecord:/app
-    #   - ./app/node_modules
+      - '5000:3000'                    # Maps port 5000 on host to port 3000 in container
+    volumes:
+      - ./v2-trackrecord:/app           # Syncs local files to container
+      - /app/node_modules                # Keeps node_modules isolated
+    environment:
+      - CHOKIDAR_USEPOLLING=true         # Enables polling for file changes
+      - NODE_ENV=development             # Ensure development mode
     stdin_open: true
     tty: true
