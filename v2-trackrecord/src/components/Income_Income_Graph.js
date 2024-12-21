@@ -4,7 +4,7 @@ import { Chart as ChartJS, LineElement, Title, Tooltip, Legend, CategoryScale, L
 
 ChartJS.register(LineElement, Title, Tooltip, Legend, CategoryScale, LinearScale, PointElement, Filler);
 
-const Graph = ({label, dataValues}) => {
+const Income_Income_Graph = ({label, dataValues}) => {
   const chartRef = useRef(null); // Reference to the chart instance
   const [gradient, setGradient] = useState(null); // State to store the gradient
 
@@ -58,15 +58,14 @@ useEffect(() => {
   };
 
   const config = {
+    responsive: true,
+    maintainAspectRatio: false, // Add this line
     plugins: {
       filler: {
         propagate: false,
       },
       legend: {
-         display: false, // Disable the legend (hides the label)
-      },
-      filler: {
-         propagate: false,
+        display: false, // Disable the legend (hides the label)
       },
     },
     interaction: {
@@ -77,26 +76,29 @@ useEffect(() => {
         tension: 0.4, // Smooth the lines
       },
     },
-   scales: {
+    scales: {
       x: {
-         grid: {
-         display: false, // Disable grid lines on the x-axis
-         },
+        grid: {
+          display: false, // Disable grid lines on the x-axis
+        },
       },
       y: {
-         beginAtZero: true,
-         grid: {
-         display: false, // Disable grid lines on the y-axis
-         },
+        beginAtZero: true,
+        grid: {
+          display: false, // Disable grid lines on the y-axis
+        },
       },
-   },
+    },
   };
+
 
   return (
     <div className="graph" >
-      <Line ref={chartRef} data={data} options={config}   />
+      <div className="graph-container">
+        <Line ref={chartRef} data={data} options={config}   />
+      </div>
     </div>
   );
 };
 
-export default Graph;
+export default Income_Income_Graph;

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Libre%20Caslon%20Text:700|Libre%20Caslon%20Text:400');
 @import url('./navigation.css');
 @import url('./Transaction.css');
+@import url('./charts/Dashboard_insight.css');
 
 :root {
   --main-text: #0b191e;
@@ -294,12 +295,12 @@ h2 {
   width: 100%;
 }
 
-.graph canvas {
-  width: 100% !important;
-  /* height: 70% !important; */
+/* .graph canvas {
+  width: 100% !important; */
+  /* height: 70% !important;
   min-width: 170px;
   min-height: 100px !important;
-}
+} */
 
 /* FINANCIAL INSIGHT */
 
@@ -384,7 +385,7 @@ h2 {
   justify-content: flex-end;
 }
 
-.chart-detail, .chart-graph {
+.chart-graph {
   height: 100%
 }
 
@@ -392,18 +393,24 @@ h2 {
   color: var(--dark-blue);
   opacity: 60%;
   width: 85%;
-  font-size: 20px;
+  font-size: 2vw;
 }
 
 .chart-detail {
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
-  align-content: flex-start;
+  align-content: space-around;
   justify-content: center;
+}
+
+.ic-arrow {
+  width: 10vw;
 }
 
 img.arrow-anim {
   opacity: 35%; 
+  width: 100%;
 }
 
 /* TODO: add a transparent background on the shadow */
@@ -417,7 +424,7 @@ img.arrow-anim {
 }
 
 section.note-financial {
-  padding: 25px;
+  padding: 1.5vw;
   height: 300px;
   overflow: auto;
   background: var(--main-accent);
