@@ -101,4 +101,29 @@ select#export-transaction {
    cursor: pointer;
 }
 
+.category-tag {
+   border:2px solid var(--accent-80);
+   background-color: var(--accent-25);
+   border-radius: 5px;
+   padding-inline: 15px;
+   text-align: center;
+   width: fit-content;
+}
 
+table {
+   width: 100%;
+   border-collapse: collapse;
+   border-spacing: 10px 5px;
+ }
+thead {
+   border-bottom: 2px solid var(--main-prim);
+}
+thead th {
+   padding: 10px;
+   text-align: left;
+}
+
+tbody td {
+   padding: 10px 5px;
+   border-top: 1px solid #ddd; /* Optional: Add a border between rows */
+}
