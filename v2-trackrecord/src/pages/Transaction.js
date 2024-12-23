@@ -55,7 +55,9 @@ function Transaction() {
               <td>$15.99</td>
               <td>Entertainment</td>
               <td>Monday, June 12, 2023,  2:40PM</td>
-              <td>Monthly</td>
+              <td>
+                <div class="category-tag">Monthly</div>
+              </td>
               <td>Tuesday, June 12, 2023, 2:40PM</td>
             </tr>
             <tr>
@@ -63,7 +65,9 @@ function Transaction() {
               <td>$15.99</td>
               <td>Entertainment</td>
               <td>Monday, June 12, 2023,  2:40PM</td>
-              <td>Monthly</td>
+              <td>
+                <div class="category-tag">Yearly</div>
+              </td>
               <td>Tuesday, June 12, 2023, 2:40PM</td>
             </tr>
             <tr>
@@ -71,7 +75,9 @@ function Transaction() {
               <td>$15.99</td>
               <td>Entertainment</td>
               <td>Monday, June 12, 2023,  2:40PM</td>
-              <td>Monthly</td>
+              <td>
+                <div class="category-tag">Daily</div>
+              </td>
               <td>Tuesday, June 12, 2023, 2:40PM</td>
             </tr>
             <tr>
@@ -79,7 +85,9 @@ function Transaction() {
               <td>$15.99</td>
               <td>Entertainment</td>
               <td>Monday, June 12, 2023,  2:40PM</td>
-              <td>Monthly</td>
+              <td>
+                <div class="category-tag">Weekly</div>
+              </td>
               <td>Tuesday, June 12, 2023, 2:40PM</td>
             </tr>
             <tr>
@@ -87,39 +95,9 @@ function Transaction() {
               <td>$15.99</td>
               <td>Entertainment</td>
               <td>Monday, June 12, 2023,  2:40PM</td>
-              <td>Monthly</td>
-              <td>Tuesday, June 12, 2023, 2:40PM</td>
-            </tr>
-            <tr>
-              <td>Netflix Subscription</td>
-              <td>$15.99</td>
-              <td>Entertainment</td>
-              <td>Monday, June 12, 2023,  2:40PM</td>
-              <td>Monthly</td>
-              <td>Tuesday, June 12, 2023, 2:40PM</td>
-            </tr>
-            <tr>
-              <td>Netflix Subscription</td>
-              <td>$15.99</td>
-              <td>Entertainment</td>
-              <td>Monday, June 12, 2023,  2:40PM</td>
-              <td>Monthly</td>
-              <td>Tuesday, June 12, 2023, 2:40PM</td>
-            </tr>
-            <tr>
-              <td>Netflix Subscription</td>
-              <td>$15.99</td>
-              <td>Entertainment</td>
-              <td>Monday, June 12, 2023,  2:40PM</td>
-              <td>Monthly</td>
-              <td>Tuesday, June 12, 2023, 2:40PM</td>
-            </tr>
-            <tr>
-              <td>Netflix Subscription</td>
-              <td>$15.99</td>
-              <td>Entertainment</td>
-              <td>Monday, June 12, 2023,  2:40PM</td>
-              <td>Monthly</td>
+              <td>
+                <div class="category-tag">Monthly</div>
+              </td>
               <td>Tuesday, June 12, 2023, 2:40PM</td>
             </tr>
           </tbody>
