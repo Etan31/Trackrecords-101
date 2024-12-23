@@ -1,4 +1,5 @@
 import icSearch from './../assets/img/icons/ic-search.svg';
+import icFilter from './../assets/img/icons/ic-filter.svg';
 
 function Transaction() {
   return (
@@ -12,8 +13,7 @@ function Transaction() {
         </div>
         <div className="filterData-container">
           <input className="filterData" type="text" />  {/* dropdown categories */}
-          {/* <img src="" alt=""/>  */} {/* icon */}
-          <p>Add filter</p>
+          <button>Add filter <img src={icFilter} alt="filter icon"/> </button>
         </div>
         <div className="exportData-container">
           <p>Export Data (CSV)</p>
