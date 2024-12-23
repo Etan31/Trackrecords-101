@@ -2,6 +2,8 @@
     position: fixed;
     bottom: 50px;
     right: 50px;
+    border: 2px solid var(--main-bg);
+    border-radius: 50px;    
 }
 
 .fab-menu {
