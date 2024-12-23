@@ -10,6 +10,7 @@
 
 .organize-data {
    display: flex;
+   flex-wrap: wrap;
    justify-content: space-between;
    padding-inline: clamp(25px, 3vw, 70px)
 }
@@ -45,6 +46,7 @@
    display: flex;
    flex-direction: row-reverse;
    height: 30px;
+   margin-right: clamp(100px, 5%, 300px);
    width: clamp(400px, 30vw, 700px);
    background-color: var(--accent-25);
    position: relative;
@@ -94,3 +96,9 @@
    background-position: calc(100% - 5px) center;
    background-size: 15px;
 }
+
+select#export-transaction {
+   cursor: pointer;
+}
+
+
