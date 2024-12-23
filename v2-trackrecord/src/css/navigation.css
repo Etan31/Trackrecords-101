@@ -25,6 +25,8 @@ nav {
 .logo img {
    width: 70%;
    filter: brightness(10);
+   display: flex;
+   margin: 0 auto;
 }
 
 .others, .account {
