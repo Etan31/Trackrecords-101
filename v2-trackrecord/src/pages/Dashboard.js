@@ -7,6 +7,8 @@ import Income_Income_Graph from '../components/Income_Income_Graph';
 import FinanceInsight from './../components/FinancialInsight';
 import FinancialNotes from './../components/FinancialNotes';
 import RecentTransaction from './../components/transaction/RecentTransaction';
+import FABMenu from '../components/fabMenu';
+
 
 // Icons
 import ICAdd from './../assets/img/icons/add.svg';
@@ -29,6 +31,14 @@ function DashboardContainer() {
 
   const balanceData = [10, 25, 90, 45, 0, 79, 60, 85];
   const totalIncomeData = [90, 85, 88, 92, 97, 95, 96, 100];
+
+  const handleAddBudget = () => {
+    alert('Add Budget');
+  };
+
+  const handleAddTransaction = () => {
+    alert('Add Transaction');
+  };
 
   return (
     <>
@@ -76,7 +86,7 @@ function DashboardContainer() {
 
           <RecentTransaction />
 
-          <button id="openModal" className="addtransaction" onClick={openModal}>
+          {/* <button id="openModal" className="addtransaction" onClick={openModal}>
             Add record
             <img src={ICAdd} alt="Cross icon" />
           </button>
@@ -88,7 +98,14 @@ function DashboardContainer() {
               </button>
               <p>A pop-up modal component made with the native HTML dialog element with custom styles.</p>
             </div>
-          </dialog>
+          </dialog> */}
+
+          <FABMenu
+            onAddBudget={handleAddBudget}
+            onAddTransaction={handleAddTransaction}
+            buttonIcon={ICAdd}
+            buttonLabel="Add record"
+          />
         </div>
       )}
     </>
