@@ -1,7 +1,22 @@
 import icSearch from './../assets/img/icons/ic-search.svg';
 import icFilter from './../assets/img/icons/ic-filter.svg';
+// import useModal from './../hook/useModal';
+import FABMenu from '../components/fabMenu';
+
+import ICAdd from './../assets/img/icons/add.svg';
+import './../css/Transaction.css';
 
 function Transaction() {
+  const handleAddBudget = () => {
+    alert('Add Budget');
+  };
+
+  const handleAddTransaction = () => {
+    alert('Add Transaction');
+  };
+
+  // const { isOpen, openModal, closeModal } = useModal();
+
   return (
     <div className="container transaction">
       <h2>Transaction</h2>
@@ -110,6 +125,13 @@ function Transaction() {
           </tbody>
         </table>
       </div>
+
+      <FABMenu
+        onAddBudget={handleAddBudget}
+        onAddTransaction={handleAddTransaction}
+        buttonIcon={ICAdd}
+        buttonLabel="Add record"
+      />
     </div>
   );
 }

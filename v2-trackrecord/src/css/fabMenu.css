@@ -1,0 +1,92 @@
+.fab-menu-wrapper {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+}
+
+.fab-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--main-prim);
+    color: var(--main-text);
+    gap: 10px;
+    transition: padding 0.3s ease;
+}
+
+.fab-menu.open {
+    padding: 8px; 
+}
+
+.fab-menu img {
+    opacity: 70%;
+    width: 25px;
+    height: 25px;
+    transition: transform 0.3s ease;
+}
+
+.fab-menu img.rotated {
+    transform: rotate(45deg);
+}
+
+.fab-label {
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.fab-menu.open .fab-label {
+    opacity: 0;
+    display: none;
+}
+
+.fab-actions {
+    position: absolute;
+    top: -70px;
+    right: 0;
+    width: 0;
+    background-color: var(--main-prim);
+    border-radius: 5px;
+    visibility: hidden;
+    overflow: hidden;
+    transition: width 0.3s ease, top 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.fab-actions.expand {
+    width: 180px;
+    top: -56px;
+    visibility: visible;
+    transition: width 0.3s ease, top 0.3s ease, visibility 0s linear 0s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.fab-actions.collapse {
+    width: 0;
+    top: -70px;
+    visibility: hidden;
+    transition: width 0.3s ease, top 0.3s ease, visibility 0s linear 0.3s;
+    box-shadow: none;
+}
+
+.fab-actions button {
+    width: 100%;
+    border: none;
+    padding-block: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fab-actions.expand button {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fab-actions.collapse button {
+    opacity: 0;
+    transform: translateY(-10px);
+}
