@@ -9,7 +9,7 @@
   --main-bg2: #EEF3FC;
   --main-prim: #41a4c8;
   --main-second: rgb(137, 201, 225);
-  --main-accent: #58b7da;
+  --main-accent: rgb(88, 183, 218);
   --dark-blue: #277b9a;
   
   --green: rgb(32, 234, 131);
@@ -19,6 +19,9 @@
   --accent25: hsla(196, 64%, 60%, 0.25);
   --accent10: hsla(196, 64%, 60%, 0.1);
   --accent05: hsla(196, 64%, 60%, 0.05);
+
+  --accent-25: rgba(88, 183, 218, 25%);
+
 
   /* Theme */
   /* 

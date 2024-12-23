@@ -1,23 +1,25 @@
+import icSearch from './../assets/img/icons/ic-search.svg';
+
 function Transaction() {
   return (
     <div className="container transaction">
       <h2>Transaction</h2>
       <p>View and track your expenses</p>
       <div className="organize-data">
-        <div class="searchData-container">
+        <div className="searchData-container">
           <input className="seardata" placeholder="Search..." type="text" />
-          {/* <img src="" alt=""/>  */} {/* icon */}
+          <img src={icSearch} alt="search icon"/>  {/* icon */}
         </div>
-        <div class="filterData-container">
+        <div className="filterData-container">
           <input className="filterData" type="text" />  {/* dropdown categories */}
           {/* <img src="" alt=""/>  */} {/* icon */}
           <p>Add filter</p>
         </div>
-        <div class="exportData-container">
+        <div className="exportData-container">
           <p>Export Data (CSV)</p>
         </div>
       </div>
-      <div class="transactionTable-container">
+      <div className="transactionTable-container">
         <table>
           <thead>
             <tr>
