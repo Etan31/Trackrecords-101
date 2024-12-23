@@ -16,7 +16,10 @@ function Transaction() {
           <button>Add filter <img src={icFilter} alt="filter icon"/> </button>
         </div>
         <div className="exportData-container">
-          <p>Export Data (CSV)</p>
+          <select className='exportTransaction' name="export" id="export-transaction">
+            <option>Export transaction (CSV)</option>
+            <option>Export transaction (PDF)</option>
+          </select>
         </div>
       </div>
       <div className="transactionTable-container">
