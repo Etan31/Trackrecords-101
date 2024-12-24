@@ -1,12 +1,18 @@
 import icSearch from './../assets/img/icons/ic-search.svg';
 import icFilter from './../assets/img/icons/ic-filter.svg';
+
+import useContainerStyles from './../hook/useContainerStyles';
+
 // import useModal from './../hook/useModal';
 import FABMenu from '../components/fabMenu';
 
 import ICAdd from './../assets/img/icons/add.svg';
 import './../css/Transaction.css';
 
-function Transaction() {
+function Transaction({menuActive }) {
+
+  const containerStyles = useContainerStyles(menuActive);
+
   const handleAddBudget = () => {
     alert('Add Budget');
   };
@@ -18,17 +24,17 @@ function Transaction() {
   // const { isOpen, openModal, closeModal } = useModal();
 
   return (
-    <div className="container transaction">
+    <div className="container transaction" style={containerStyles}>
       <h2>Transaction</h2>
       <p>View and track your expenses</p>
       <div className="organize-data">
         <div className="searchData-container">
           <input className="seardata" placeholder="Search..." type="text" />
-          <img src={icSearch} alt="search icon"/>  {/* icon */}
+          <img src={icSearch} alt="search icon" />  {/* icon */}
         </div>
         <div className="filterData-container">
           <input className="filterData" type="text" />  {/* dropdown categories */}
-          <button>Add filter <img src={icFilter} alt="filter icon"/> </button>
+          <button>Add filter <img src={icFilter} alt="filter icon" /> </button>
         </div>
         <div className="exportData-container">
           <select className='exportTransaction' name="export" id="export-transaction">
@@ -56,7 +62,7 @@ function Transaction() {
               <td>Entertainment</td>
               <td>Monday, June 12, 2023,  2:40PM</td>
               <td>
-                <div class="category-tag">Monthly</div>
+                <div className="category-tag">Monthly</div>
               </td>
               <td>Tuesday, June 12, 2023, 2:40PM</td>
             </tr>
@@ -66,7 +72,7 @@ function Transaction() {
               <td>Entertainment</td>
               <td>Monday, June 12, 2023,  2:40PM</td>
               <td>
-                <div class="category-tag">Yearly</div>
+                <div className="category-tag">Yearly</div>
               </td>
               <td>Tuesday, June 12, 2023, 2:40PM</td>
             </tr>
@@ -76,7 +82,7 @@ function Transaction() {
               <td>Entertainment</td>
               <td>Monday, June 12, 2023,  2:40PM</td>
               <td>
-                <div class="category-tag">Daily</div>
+                <div className="category-tag">Daily</div>
               </td>
               <td>Tuesday, June 12, 2023, 2:40PM</td>
             </tr>
@@ -86,7 +92,7 @@ function Transaction() {
               <td>Entertainment</td>
               <td>Monday, June 12, 2023,  2:40PM</td>
               <td>
-                <div class="category-tag">Weekly</div>
+                <div className="category-tag">Weekly</div>
               </td>
               <td>Tuesday, June 12, 2023, 2:40PM</td>
             </tr>
@@ -96,7 +102,7 @@ function Transaction() {
               <td>Entertainment</td>
               <td>Monday, June 12, 2023,  2:40PM</td>
               <td>
-                <div class="category-tag">Monthly</div>
+                <div className="category-tag">Monthly</div>
               </td>
               <td>Tuesday, June 12, 2023, 2:40PM</td>
             </tr>
