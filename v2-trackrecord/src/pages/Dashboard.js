@@ -8,6 +8,7 @@ import FinanceInsight from './../components/FinancialInsight';
 import FinancialNotes from './../components/FinancialNotes';
 import RecentTransaction from './../components/transaction/RecentTransaction';
 import FABMenu from '../components/fabMenu';
+import useContainerStyles from './../hook/useContainerStyles';
 
 
 // Icons
@@ -25,8 +26,11 @@ import './../css/Login.css';
 import './../css/Settings.css';
 
 
-function DashboardContainer() {
+function DashboardContainer({ menuActive }) {
   const location = useLocation();
+  
+  const containerStyles = useContainerStyles(menuActive);
+
   const { isOpen, openModal, closeModal } = useModal();
 
   const balanceData = [10, 25, 90, 45, 0, 79, 60, 85];
@@ -43,7 +47,7 @@ function DashboardContainer() {
   return (
     <>
       {location.pathname === '/' && (
-        <div className="container mainDashboard">
+        <div className="container mainDashboard"  style={containerStyles}>
           <header className="heading">
             <h1>Good Morning, <span id="name">Tristan</span></h1>
             <p>Welcome to your financial Insights.</p>
