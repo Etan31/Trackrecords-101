@@ -142,6 +142,12 @@ h2 {
   padding: 20px;
   width: calc(100% - 250px); 
   height: 100%;
+  transition: width 0.3s ease, margin-left 0.3s ease;
+}
+
+.container.mainDashboard.collapsed {
+  margin-left: unset;
+  width: 100%;
 }
 
 .container {
