@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
+import OpenMenuButton from '../components/OpenMenuButton';
 
-function Budget() {
+function Budget({isNavOpen, toggleNav}) {
   return (
-    <section>Budget</section>
+        <section id="budget">
+      <header>
+        <OpenMenuButton isNavOpen={isNavOpen} toggleNav={toggleNav}/>
+      </header>
+      <p>Budget</p>
+    </section>
   )
 }
 

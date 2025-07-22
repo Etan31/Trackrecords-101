@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
+import OpenMenuButton from '../components/OpenMenuButton';
 
-function Settings() {
+function Settings({isNavOpen, toggleNav}) {
   return (
-    <section>Settings</section>
+    <section id="settings">
+      <header>
+        <OpenMenuButton isNavOpen={isNavOpen} toggleNav={toggleNav}/>
+      </header>
+      <p>Settings</p>
+    </section>
   )
 }
 

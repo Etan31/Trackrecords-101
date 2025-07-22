@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
+import OpenMenuButton from '../components/OpenMenuButton';
 
-function Notifications() {
+function Notifications({isNavOpen, toggleNav}) {
   return (
-    <section>Notifications</section>
+    <section id="notifications">
+      <header>
+        <OpenMenuButton isNavOpen={isNavOpen} toggleNav={toggleNav}/>
+      </header>
+      <p>Notifications</p>
+    </section>
   )
 }
 

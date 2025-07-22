@@ -1,4 +1,5 @@
 import CloseMenu from './../assets/icons/ic-close-menu-white.svg';
+import { Link } from 'react-router-dom';
 
 const NavBar = ({ isNavOpen, toggleNav }) => {
   return (
@@ -7,23 +8,23 @@ const NavBar = ({ isNavOpen, toggleNav }) => {
       id="side_nav"
     >
       <div className="sidenav-logo">
-        <a href="/dashboard">Logo</a>
+        <Link to="/dashboard">Logo</Link>
         <button onClick={toggleNav} id="close_menu">
           <img src={CloseMenu} alt="Close side menu" />
         </button>
       </div>
       <div className="sidenav-main">
-        <a href="/dashboard">Home</a>
-        <a href="/transaction">Transaction</a>
-        <a href="/analytics">Analytics</a>
-        <a href="/notifications">Notifications</a>
+        <Link to="/dashboard">Home</Link>
+        <Link to="/transactions">Transaction</Link>
+        <Link to="/analytics">Analytics</Link>
+        <Link to="/notifications">Notifications</Link>
       </div>
       <div className="sidenav-support">
-        <a href="/help">Help</a>
-        <a href="/settings">Settings</a>
+        <Link to="/help">Help</Link>
+        <Link to="/settings">Settings</Link>
       </div>
       <div className="sidenav-bottom">
-        <a href="/login">Login</a>
+        <Link to="/login">Login</Link>
       </div>
     </nav>
   );

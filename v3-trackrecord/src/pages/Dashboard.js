@@ -1,14 +1,10 @@
-import OpemMenu from './../assets/icons/ic-menu-black.svg';
+import OpenMenuButton from './../components/OpenMenuButton';
 
 function Dashboard({ isNavOpen, toggleNav }) {
   return (
     <section id="dashboard">
       <header>
-        {!isNavOpen && (
-          <button onClick={toggleNav} id="open_menu">
-            <img src={OpemMenu} alt="Open side menu" />
-          </button>
-        )}
+        <OpenMenuButton isNavOpen={isNavOpen} toggleNav={toggleNav}/>
       </header>
       <h1>Dashboard Content</h1>
     </section>

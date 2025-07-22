@@ -1,11 +1,17 @@
 //@todo: the login and Logout should change depending if the user is autorized.
 //like: if user is autorized this the shown menu is "Logout", otherwise it's "Login"
 
-import React from 'react'
+import React from 'react';
+import OpenMenuButton from '../components/OpenMenuButton';
 
-function Login() {
+function Login({isNavOpen, toggleNav}) {
   return (
-    <section>Login</section>
+    <section id="login">
+      <header>
+        <OpenMenuButton isNavOpen={isNavOpen} toggleNav={toggleNav}/>
+      </header>
+      <p>Login</p>
+    </section>
   )
 }
 
