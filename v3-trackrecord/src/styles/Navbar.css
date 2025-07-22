@@ -1,0 +1,80 @@
+nav.sidenav {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 8px;
+  height: 100vh;
+  background-color: #2a9fd6;
+  padding: 1rem;
+}
+
+.sidenav-main,
+.sidenav-support {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.sidenav-logo {
+  grid-row: 1 / 2;
+}
+
+.sidenav-main {
+  grid-row: 2 / span 6; /* spans 6 rows starting from row 2 */
+}
+
+.sidenav-support {
+  grid-row: 8 / span 2; /* starts at row 8, spans 2 rows */
+  justify-content: flex-end;
+}
+
+.sidenav-bottom {
+  grid-row-start: 10;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.25rem 0;
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+nav.sidenav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  background-color: #2a9fd6;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.sidenav-open {
+  transform: translateX(0);
+}
+
+.sidenav-closed {
+  transform: translateX(-100%);
+}
+
+main.main-with-nav {
+  margin-left: 250px;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+main.main-full {
+  margin-left: 0;
+  transition: margin-left 0.3s ease-in-out;
+}
