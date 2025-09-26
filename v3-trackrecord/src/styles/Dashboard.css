@@ -1,0 +1,5 @@
+header.header-open {
+    gap: 0;
+    margin-left: -25px;
+    transition: 0.5s ease-out;
+}
