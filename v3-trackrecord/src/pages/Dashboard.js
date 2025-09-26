@@ -4,9 +4,14 @@ function Dashboard({ isNavOpen, toggleNav }) {
   return (
     <section id="dashboard">
       <header>
-        <OpenMenuButton isNavOpen={isNavOpen} toggleNav={toggleNav}/>
+        <div>
+          <OpenMenuButton isNavOpen={isNavOpen} toggleNav={toggleNav}/>
+        </div>
+        <div class="heading-text">
+          <h1>Good Morning, <span>Tristan</span> </h1> 
+          <p>Welcome to you financial insights.</p>
+        </div>
       </header>
-      <h1>Dashboard Content</h1>
     </section>
   );
 }
