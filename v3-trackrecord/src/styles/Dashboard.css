@@ -3,3 +3,25 @@ header.header-open {
     margin-left: -25px;
     transition: 0.5s ease-out;
 }
+
+.level {
+    display: flex;
+    gap:25px;
+    margin: 25px 10px;
+    justify-content: space-between;
+}
+
+
+.level3{
+    display: block;
+}
+
+header.level3-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.panel.total-balance,
+.panel.total-income {
+    width: 50%;
+}

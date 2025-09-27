@@ -1,5 +1,7 @@
 :root {
   --main-bg: #f5fdff;
+  --accent-10: rgba(88, 183, 218, 0.1);
+  --main-accent:#58B7DA;
 }
 
 * {
@@ -31,6 +33,7 @@ body {
 header {
   display: flex;
   gap:20px; 
+  
 }
 
 
@@ -93,4 +96,14 @@ section#dashboard {
   overflow: auto; /* Only scroll if content overflows */
   padding: 1rem;
   box-sizing: border-box;
+}
+
+.panel {
+  background-color: var(--accent-10);
+  border-radius: 10px;
+  padding:20px 25px;
+}
+
+.highlight {
+  background-color: var(--main-accent);
 }
