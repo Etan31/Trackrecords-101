@@ -20,16 +20,16 @@ function App() {
 
   return (
     <div className={`App ${menuActive ? 'menu-active' : ''}`}>
-      <div className="hamburger-menu2" onClick={toggleMenu2}>
+      {/* <div className="hamburger-menu2" onClick={toggleMenu2}>
         <div className="hamburger-bar2"></div>
         <div className="hamburger-bar2"></div>
         <div className="hamburger-bar2"></div>
-      </div>
+      </div> */}
 
       <div className="App dashboard">
         <Router>
-          <div className={`nav ${menuActive ? 'nav-expanded' : ''}`}>
-          <NavBar onMenuToggle={setMenuActive} menuActive={menuActive} />
+          <div className={`nav ${menuActive ? 'nav-expanded' : 'collapsed'}`}>
+            <NavBar onMenuToggle={setMenuActive} menuActive={menuActive} />
           </div>
           <Routes>
             <Route path="/" element={<DashboardContainer menuActive={menuActive} />} />

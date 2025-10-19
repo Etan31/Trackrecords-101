@@ -1,7 +1,6 @@
 function useContainerStyles(menuActive) {
     return {
-      width: menuActive ? '100%' : 'calc(100% - 250px)',
-      marginLeft: menuActive ? 'unset' : '250px',
+      marginLeft: menuActive ? '50px' : '50px',
       transition: 'all 0.3s ease',
     };
   }

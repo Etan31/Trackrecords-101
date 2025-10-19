@@ -31,7 +31,7 @@ function DashboardContainer({ menuActive }) {
   
   const containerStyles = useContainerStyles(menuActive);
 
-  const { isOpen, openModal, closeModal } = useModal();
+  // const { isOpen, openModal, closeModal } = useModal();
 
   const balanceData = [10, 25, 90, 45, 0, 79, 60, 85];
   const totalIncomeData = [90, 85, 88, 92, 97, 95, 96, 100];
